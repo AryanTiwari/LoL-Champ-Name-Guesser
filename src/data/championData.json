@@ -401,7 +401,7 @@
         "attackspeedperlevel": 3.33
       }
     },
-    "AurelionSol": {
+    "Aurelion Sol": {
       "version": "6.24.1",
       "id": "AurelionSol",
       "key": "136",
@@ -1096,7 +1096,7 @@
         "attackspeedperlevel": 2.7
       }
     },
-    "DrMundo": {
+    "Dr Mundo": {
       "version": "6.24.1",
       "id": "DrMundo",
       "key": "36",
@@ -1346,7 +1346,7 @@
         "attackspeedperlevel": 2.8
       }
     },
-    "FiddleSticks": {
+    "Fiddlesticks": {
       "version": "6.24.1",
       "id": "FiddleSticks",
       "key": "9",
@@ -6678,5 +6678,5 @@
         "attackspeedperlevel": 2.11
       }
     }
-  }
+  } 
 }

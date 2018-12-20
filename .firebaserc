@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "Development": "league-champ-guesser",
+    "default": "league-champ-guesser"
+  }
+}
