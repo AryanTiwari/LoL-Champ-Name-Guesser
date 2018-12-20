@@ -52,6 +52,7 @@ class App extends Component {
   _checkName = (e) => {
     const { championName, champsGuessed, champsVisible } = this.state;
     if (championName.toUpperCase() === (e.target.value).toUpperCase()) {
+      e.target.value = "";
       if (championNames.length === 0) {
         console.log("nice");
       } else {
@@ -63,7 +64,7 @@ class App extends Component {
         })
         setTimeout(() => {
           this.setState({ champsVisible: { ...this.state.champsVisible, [prevChamp]: true } });
-        }, 50);
+        }, 400);
       }
     }
   }
@@ -77,9 +78,9 @@ class App extends Component {
       <div className="App">
         <h2> League of Legends Champion Guesser </h2>
         <h3> ______, {data[this.state.championName].title} </h3>
-        <Input style={{width:128, marginBottom:8}} placeholder="Champion Name" onPressEnter={this._checkName}/>
+        <Input style={{width:127, marginBottom:8}} placeholder="Champion Name" onPressEnter={this._checkName}/>
         <div></div>
-        <p> You have guessed {this.state.champsGuessed.length} out of 133 </p>
+        <p> You have guessed {this.state.champsGuessed.length} out of {championNames.length + this.state.champsGuessed.length} </p>
         <List
           grid={{
             gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3,
@@ -94,6 +95,8 @@ class App extends Component {
                       <div style={{ color: palette.vibrant, alignItems:'center', display:'flex', flexDirection:'column' }}>
                         {item}
                         <div></div>
+                        {data[item].title}
+                        <div style={{marginBottom:6}}></div>
                         <div style={{height:80,width:80,overflow:'hidden',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:100,
                               borderStyle:'solid',borderWidth:6,borderColor: palette.vibrant}}>
                           <img

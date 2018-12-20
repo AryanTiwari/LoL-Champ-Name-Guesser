@@ -108,7 +108,7 @@
       "id": "Akali",
       "key": "84",
       "name": "Akali",
-      "title": "the Fist of Shadow",
+      "title": "the Rogue Assassin",
       "blurb": "There exists an ancient order originating in the Ionian Isles dedicated to the preservation of balance. Order, chaos, light, darkness -- all things must exist in perfect harmony for such is the way of the universe. This order is known as the Kinkou ...",
       "info": {
         "attack": 5,
@@ -406,7 +406,7 @@
       "id": "AurelionSol",
       "key": "136",
       "name": "Aurelion Sol",
-      "title": "The Star Forger",
+      "title": "the Star Forger",
       "blurb": "Aurelion Sol once graced the vast emptiness of the cosmos with celestial wonders of his own devising. Now, he is forced to wield his awesome power at the behest of a space-faring empire that tricked him into servitude. Desiring a return to his ...",
       "info": {
         "attack": 2,
@@ -1251,7 +1251,7 @@
       "id": "Evelynn",
       "key": "28",
       "name": "Evelynn",
-      "title": "the Widowmaker",
+      "title": "the Agony's Embrace",
       "blurb": "Swift and lethal, Evelynn is one of the most deadly - and expensive - assassins in all of Runeterra. Able to merge with the shadows at will, she patiently stalks her prey, waiting for the right moment to strike. While Evelynn is clearly not entirely ...",
       "info": {
         "attack": 4,
@@ -1501,7 +1501,7 @@
       "id": "Galio",
       "key": "3",
       "name": "Galio",
-      "title": "the Sentinel's Sorrow",
+      "title": "the Colossus",
       "blurb": "''There is no such thing as redemption. Only penance.''<br><br>Long before the regulation of magic, mages experimented with the creation of artificial life. Now forbidden, instilling golems with reason was once not so uncommon a practice amongst the ...",
       "info": {
         "attack": 3,
@@ -1600,7 +1600,7 @@
       "id": "Garen",
       "key": "86",
       "name": "Garen",
-      "title": "The Might of Demacia",
+      "title": "the Might of Demacia",
       "blurb": "Throughout Valoran, the resolve of Demacia's military is alternately celebrated or despised, but always respected. Their ''zero tolerance'' moral code is strictly upheld by civilians and soldiers alike. In combat, this means Demacian troops may not ...",
       "info": {
         "attack": 7,
@@ -2343,6 +2343,13 @@
         "attackspeedperlevel": 1
       }
     },
+    "Kaisa": {
+      "name": "Kai'sa",
+      "title": "the Daughter of the Void",
+      "image": {
+        "full": "Kaisa.png"
+      }
+    },
     "Kalista": {
       "version": "6.24.1",
       "id": "Kalista",
@@ -2596,7 +2603,7 @@
       "id": "Kayle",
       "key": "10",
       "name": "Kayle",
-      "title": "The Judicator",
+      "title": "the Judicator",
       "blurb": "In a world far away where an ancient war still rages, Kayle was a great hero - the strongest of an immortal race committed to destroying evil wherever it could be found. For ten thousand years, Kayle fought tirelessly for her people, wielding her ...",
       "info": {
         "attack": 6,
@@ -2746,7 +2753,7 @@
       "id": "Kindred",
       "key": "203",
       "name": "Kindred",
-      "title": "The Eternal Hunters",
+      "title": "the Eternal Hunters",
       "blurb": "''Tell me again, little Lamb, which things are ours to take?''<br>''All things, Dear Wolf.''<br>Separate, but never parted, Kindred represents the twin essences of death. Lamb's arrow offers a swift release for those who accept their fate. Wolf hunts ...",
       "info": {
         "attack": 8,
@@ -3537,6 +3544,13 @@
         "attackspeedperlevel": 3
       }
     },
+    "Xayah": {
+      "name": "Xayah",
+      "title": "the Rebel",
+      "image": {
+        "full": "Xayah.png"
+      }
+    },
     "Mordekaiser": {
       "version": "6.24.1",
       "id": "Mordekaiser",
@@ -3786,6 +3800,13 @@
         "attackspeedperlevel": 1
       }
     },
+    "Neeko": {
+      "name": "Neeko",
+      "title": "the Curious Chameleon",
+      "image": {
+        "full": "Neeko.png"
+      }
+    },
     "Nidalee": {
       "version": "6.24.1",
       "id": "Nidalee",
@@ -3891,7 +3912,7 @@
       "id": "Nunu",
       "key": "20",
       "name": "Nunu",
-      "title": "the Yeti Rider",
+      "title": "the Boy and His Yeti",
       "blurb": "Sometimes bonds of friendship become stronger than even bonds of blood. When those bonds link a fearless boy to a fearsome Yeti, the bond becomes a force to be reckoned with. Given the responsibility of taming a terrifying beast, Nunu forged a ...",
       "info": {
         "attack": 4,
@@ -4036,6 +4057,13 @@
         "attackspeedperlevel": 3.5
       }
     },
+    "Ornn": {
+      "name": "Ornn",
+      "title": "the Fire below the Mountain",
+      "image": {
+        "full": "Ornn.png"
+      }
+    },
     "Pantheon": {
       "version": "6.24.1",
       "id": "Pantheon",
@@ -4136,6 +4164,13 @@
         "attackspeedperlevel": 2.5
       }
     },
+    "Pyke": {
+      "name": "Pyke",
+      "title": "the Bloodharbor Ripper",
+      "image": {
+        "full": "Pyke.png"
+      }
+    },
     "Quinn": {
       "version": "6.24.1",
       "id": "Quinn",
@@ -4184,6 +4219,13 @@
         "attackdamageperlevel": 2.41,
         "attackspeedoffset": -0.065,
         "attackspeedperlevel": 3.1
+      }
+    },
+    "Rakan": {
+      "name": "Rakan",
+      "title": "the Charmer",
+      "image": {
+        "full": "Rakan.png"
       }
     },
     "Rammus": {
@@ -4789,7 +4831,7 @@
       "id": "Sion",
       "key": "14",
       "name": "Sion",
-      "title": "The Undead Juggernaut",
+      "title": "the Undead Juggernaut",
       "blurb": "BLOOD.<br><br>SMELL IT.<br><br>WANT. ACHING. NEED!<br><br>CLOSE NOW. THEY COME.<br><br>NO CHAINS? FREE! KILL!<br><br>IN REACH. YES! DIE! DIE!<br><br>Gone. Too quick. No fight. More. I want... more.<br><br>A voice? Unfamiliar. I see him. The Grand ...",
       "info": {
         "attack": 5,
@@ -5038,7 +5080,7 @@
       "id": "Swain",
       "key": "50",
       "name": "Swain",
-      "title": "the Master Tactician",
+      "title": "the Noxian Grand General",
       "blurb": "The earliest account of Swain's existence comes from a Noxian infirmary doctor's notes. According to them, Swain limped into the ward without cry or complaint; his right leg was snapped in half, with bone protruding from the skin. A small, scowling ...",
       "info": {
         "attack": 2,
@@ -5737,7 +5779,7 @@
       "id": "Urgot",
       "key": "6",
       "name": "Urgot",
-      "title": "the Headsman's Pride",
+      "title": "the Dreadnought",
       "blurb": "There are warriors who become great for their strength, cunning, or skill with arms. Others simply refuse to die. Urgot, once a great soldier of Noxus, may constitute a case in support of the latter. Prone to diving headlong into enemy battle lines, ...",
       "info": {
         "attack": 8,
@@ -6184,7 +6226,7 @@
       "id": "Warwick",
       "key": "19",
       "name": "Warwick",
-      "title": "the Blood Hunter",
+      "title": "the Uncaged Wrath of Zaun",
       "blurb": "Warwick was once a man revered for his ability to track down human specimens for the darkest types of scientific research. When his ambitions exceeded his physical limits, he drank a dangerous elixir to transform himself into an unstoppable manhunter. ...",
       "info": {
         "attack": 7,
@@ -6626,6 +6668,13 @@
         "attackdamageperlevel": 3,
         "attackspeedoffset": 0,
         "attackspeedperlevel": 2.13
+      }
+    },
+    "Zoe": {
+      "name": "Zoe",
+      "title": "the Aspect of Twilight",
+      "image": {
+        "full": "Zoe.png"
       }
     },
     "Zyra": {
