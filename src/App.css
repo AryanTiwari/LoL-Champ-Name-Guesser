@@ -28,6 +28,12 @@
   }
 }
 
+.listItems {
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+}
+
 .championIcons {
   height:80px;
   width:80px;

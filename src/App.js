@@ -74,7 +74,7 @@ class App extends Component {
         champsVisible: { ...champsVisible, [prevChamp]: false }
       })
       setTimeout(() => {
-        this.setState({ champsVisible: { ...this.state.champsVisible, [prevChamp]: true } });
+        this.setState({ champsVisible: { ...champsVisible, [prevChamp]: true } });
       }, 500);
     }
   }
@@ -84,17 +84,18 @@ class App extends Component {
     const { champsVisible, championName,seconds,champsGuessed} = this.state;
     let display;
 
-    // Display champion name and input or won message
+    // Display champion name and input or won message and stop timer
     if(championNames.length === 0) {
       display = <h2> You guessed all the champions!</h2>
       clearInterval(timer)
     } else {
-      display = <div>
-                  <h3> ______, {data[championName].title} </h3>
-                  <Input style={{width:127, marginBottom:8}} 
-                    placeholder="Champion Name" 
-                    onPressEnter={this._checkName}/>
-                </div>
+      display = 
+      <div>
+        <h3> ______, {data[championName].title} </h3>
+        <Input style={{width:127, marginBottom:8}} 
+          placeholder="Champion Name" 
+          onPressEnter={this._checkName}/>
+      </div>
     }
 
     // Rendering all the stuff
@@ -113,18 +114,17 @@ class App extends Component {
           }}
           dataSource={champsGuessed.slice().reverse()}
           renderItem={item => (
-            <List.Item>
+            <List.Item key={item}>
              <Box key={item} className="box" pose={champsVisible[item] ? 'visible' : 'hidden'}>
                 <Palette image={require(`./data/champion/${data[item].img}`)}>
                   {palette => {
                     return (
-                      <div style={{ color: palette.vibrant, alignItems:'center', display:'flex', flexDirection:'column' }}>
+                      <div class='listItems' style={{ color: palette.vibrant  }}>
                         {item}
                         <div></div>
                         {data[item].title}
                         <div style={{marginBottom:6}}></div>
-                        <div style={{height:80,width:80,overflow:'hidden',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:100,
-                              borderStyle:'solid',borderWidth:6,borderColor: palette.vibrant}}>
+                        <div class ='championIcons' style={{borderColor: palette.vibrant}}>
                           <img
                             alt={item}
                             style={{height:81,width:81}}  
