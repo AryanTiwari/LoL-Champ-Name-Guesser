@@ -4,12 +4,15 @@ import { Input, List } from 'antd';
 import './App.css';
 import Palette from 'react-palette';
 import posed from 'react-pose';
+import moment from 'moment';
 
 // Animation Nation
 const Box = posed.div({
   hidden: { opacity: 0 },
   visible: { opacity: 1 }
 });
+
+var timer;
 
 // Gets data and all the champ names
 const championData = require('./data/championData.json').data;
@@ -30,15 +33,25 @@ championNames = Object.keys(data);
 // App Class
 class App extends Component {
 
+// State of things
   constructor(props) {
     super(props)
     this.state = {
       champsVisible: {},
       championName: this._generateRandomChamp(),
-      champsGuessed: []
+      champsGuessed: [],
+      seconds: 0,
     }
-  }
+  } 
 
+// Start Timer
+  componentDidMount() {
+    timer = setInterval(() => {
+      this.setState({
+        seconds: this.state.seconds + 1
+      })
+    }, 1000)
+  }
 
 // Generate Random Champion
   _generateRandomChamp = () => {
@@ -50,44 +63,57 @@ class App extends Component {
 
 // Check Input
   _checkName = (e) => {
-    const { championName, champsGuessed, champsVisible } = this.state;
+    const { championName, champsGuessed, champsVisible, seconds } = this.state;
+    // If the input is correct
     if (championName.toUpperCase() === (e.target.value).toUpperCase()) {
       e.target.value = "";
-      if (championNames.length === 0) {
-        console.log("nice");
-      } else {
-        const prevChamp = championName;
-        this.setState({
-          championName: this._generateRandomChamp(),  
-          champsGuessed: [...champsGuessed, championName],
-          champsVisible: { ...champsVisible, [prevChamp]: false }
-        })
-        setTimeout(() => {
-          this.setState({ champsVisible: { ...this.state.champsVisible, [prevChamp]: true } });
-        }, 400);
-      }
+      const prevChamp = championName;
+      this.setState({
+        championName: this._generateRandomChamp(),  
+        champsGuessed: [...champsGuessed, championName],
+        champsVisible: { ...champsVisible, [prevChamp]: false }
+      })
+      setTimeout(() => {
+        this.setState({ champsVisible: { ...this.state.champsVisible, [prevChamp]: true } });
+      }, 500);
     }
   }
 
 // Render Things
   render() {
-    const { champsVisible } = this.state;
-    console.log(this.state);
-    console.log(championNames);
+    const { champsVisible, championName,seconds,champsGuessed} = this.state;
+    let display;
+
+    // Display champion name and input or won message
+    if(championNames.length === 0) {
+      display = <h2> You guessed all the champions!</h2>
+      clearInterval(timer)
+    } else {
+      display = <div>
+                  <h3> ______, {data[championName].title} </h3>
+                  <Input style={{width:127, marginBottom:8}} 
+                    placeholder="Champion Name" 
+                    onPressEnter={this._checkName}/>
+                </div>
+    }
+
+    // Rendering all the stuff
     return (
       <div className="App">
         <h2> League of Legends Champion Guesser </h2>
-        <h3> ______, {data[this.state.championName].title} </h3>
-        <Input style={{width:127, marginBottom:8}} placeholder="Champion Name" onPressEnter={this._checkName}/>
+        {display}
+        <p> Timer: {moment(seconds*1000).format('m:ss')}</p>
         <div></div>
-        <p> You have guessed {this.state.champsGuessed.length} out of {championNames.length + this.state.champsGuessed.length} </p>
+        <p> You have guessed {champsGuessed.length} out of {championNames.length + champsGuessed.length} </p>
+      
+        {/* Champion Icon List*/}
         <List
           grid={{
             gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3,
           }}
-          dataSource={this.state.champsGuessed.slice().reverse()}
+          dataSource={champsGuessed.slice().reverse()}
           renderItem={item => (
-            <List.Item >
+            <List.Item>
              <Box key={item} className="box" pose={champsVisible[item] ? 'visible' : 'hidden'}>
                 <Palette image={require(`./data/champion/${data[item].img}`)}>
                   {palette => {
